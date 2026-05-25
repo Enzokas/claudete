@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claudette Colvin — A Pioneira Esquecida dos Direitos Civis</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap");
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --cream: #faf6ef;
+        --paper: #f3ece0;
+        --warm: #e8dcc8;
+        --sepia: #c4a882;
+        --rust: #8b3a2a;
+        --brown: #3d2b1f;
+        --muted: #6b5b4e;
+        --gold: #b8863c;
+        --max: 740px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--cream);
+        color: var(--brown);
+        font-family: Georgia, serif;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        line-height: 1.25;
+        color: var(--brown);
+      }
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 0.4rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+        color: var(--rust);
+        margin-bottom: 0.4rem;
+      }
+      p {
+        margin-bottom: 1.3rem;
+      }
+      a {
+        color: var(--rust);
+      }
+      strong {
+        color: var(--rust);
+      }
+      em {
+        font-style: italic;
+      }
+
+      /* NAV */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+        background: rgba(250, 246, 239, 0.95);
+        backdrop-filter: blur(5px);
+        border-bottom: 1px solid var(--warm);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 1.5rem;
+      }
+      header .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+      }
+      header nav {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      header nav a {
+        font-size: 0.75rem;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+      }
+      header nav a:hover {
+        color: var(--rust);
+      }
+
+      /* HERO — fundo escuro elegante com textura, sem imagem externa */
+      .hero {
+        min-height: 85vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 5rem 1.5rem 4rem;
+        background:
+          radial-gradient(
+            ellipse at 70% 40%,
+            rgba(139, 58, 42, 0.25) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 20% 80%,
+            rgba(184, 134, 60, 0.15) 0%,
+            transparent 50%
+          ),
+          linear-gradient(160deg, #1a0f08 0%, #2e1a10 40%, #1c1208 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      /* Grain texture via SVG inline */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        opacity: 0.4;
+        pointer-events: none;
+      }
+      .hero-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--sepia);
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 6vw, 3.6rem);
+        color: #fff;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+        margin-bottom: 0.9rem;
+      }
+      .hero p {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.1rem;
+        margin: 0;
+      }
+      /* Decorative year stamp */
+      .hero-year {
+        display: inline-block;
+        margin-top: 2rem;
+        font-family: "Playfair Display", serif;
+        font-size: 5rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.04);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 4rem 1.5rem;
+      }
+      section:nth-child(odd) {
+        background: var(--cream);
+      }
+      section:nth-child(even) {
+        background: var(--paper);
+      }
+      .inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+      .rule {
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--rust), var(--gold));
+        border-radius: 2px;
+        margin: 0.9rem 0 1.8rem;
+      }
+      .lbl {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--sepia);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      /* QUOTE */
+      .quote {
+        background: var(--brown);
+        color: #f0e6d3;
+        border-radius: 5px;
+        padding: 1.8rem 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 3px 16px rgba(0, 0, 0, 0.18);
+      }
+      .quote p {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #f0e6d3;
+        margin: 0 0 0.6rem;
+      }
+      .quote cite {
+        font-size: 0.78rem;
+        color: var(--sepia);
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        font-style: normal;
+      }
+
+      /* FIGURE */
+      .fig {
+        float: right;
+        max-width: 280px;
+        margin: 0 0 1.5rem 2rem;
+        background: var(--warm);
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.15);
+      }
+      .fig img {
+        width: 100%;
+        display: block;
+        filter: sepia(20%);
+      }
+      .fig figcaption {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.72rem;
+        color: var(--muted);
+        font-style: italic;
+        border-top: 1px solid var(--sepia);
+      }
+      .cf::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* TABLE */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+      thead tr {
+        background: var(--brown);
+        color: #f0e6d3;
+      }
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--warm);
+      }
+      tbody tr:nth-child(even) {
+        background: rgba(196, 168, 130, 0.1);
+      }
+
+      /* AUTHOR */
+      .author-card {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+        background: var(--warm);
+        border-radius: 6px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+      .author-card .avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: var(--sepia);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        color: var(--brown);
+      }
+      .author-card h3 {
+        color: var(--brown);
+        margin-bottom: 0.25rem;
+      }
+      .author-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--paper);
+        border-top: 1px solid var(--warm);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      @media (max-width: 600px) {
+        .fig {
+          float: none;
+          max-width: 100%;
+          margin: 0 0 1.5rem;
+        }
+        header nav {
+          display: none;
+        }
+        .author-card {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#">Arquivo Histórico</a>
+      <nav>
+        <a href="#contexto">Contexto</a>
+        <a href="#incidente">O Incidente</a>
+        <a href="#rosa">Rosa Parks</a>
+        <a href="#legado">Legado</a>
+        <a href="#autor">Autor</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section style="padding: 0; background: none">
+      <div class="hero">
+        <div class="hero-inner">
+          <span class="hero-tag">Direitos Civis · EUA · 1955</span>
+          <h1>Claudette Colvin</h1>
+          <p>
+            A adolescente que disse "não" nove meses antes de Rosa Parks — e foi
+            apagada da história.
+          </p>
+          <span class="hero-year">1955</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. INTRODUÇÃO -->
+    <section id="intro">
+      <div class="inner">
+        <span class="lbl">Introdução</span>
+        <h2>A pioneira esquecida</h2>
+        <div class="rule"></div>
+        <p>
+          Em 2 de março de 1955, em Montgomery, Alabama, uma jovem de 15 anos
+          recusou-se a ceder seu assento em um ônibus segregado. Seu nome era
+          Claudette Colvin — e o mundo, por décadas, quase a esqueceu
+          completamente.
+        </p>
+        <p>
+          O movimento pelos direitos civis nos EUA é frequentemente contado
+          através de nomes consagrados. Mas por trás de cada marco histórico
+          existem protagonistas cujas histórias foram silenciadas por
+          conveniência política ou esquecimento institucional. Claudette Colvin
+          é uma dessas figuras.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. QUEM FOI -->
+    <section id="quem-foi">
+      <div class="inner cf">
+        <span class="lbl">Perfil</span>
+        <h2>Quem foi Claudette Colvin</h2>
+        <div class="rule"></div>
+
+        <figure class="fig">
+          <!-- Imagem via Wikipedia Media Viewer API — funciona sem restrição de hotlink -->
+          <img
+            src="https://en.wikipedia.org/wiki/Special:Redirect/file/Claudette_Colvin.jpg?width=400"
+            alt="Claudette Colvin, c. 1955"
+            loading="lazy"
+            onerror="this.closest('figure').style.display = 'none'"
+          />
+          <figcaption>Claudette Colvin, c. 1955. Domínio público.</figcaption>
+        </figure>
+
+        <p>
+          Nascida em 5 de setembro de 1939 em Birmingham, Alabama, Claudette
+          cresceu em Montgomery em meio às rígidas Leis Jim Crow. Era membro do
+          grupo juvenil da NAACP e leitora ávida, profundamente influenciada por
+          Harriet Tubman e Sojourner Truth.
+        </p>
+        <p>
+          Após os eventos de 1955 e suas consequências, mudou-se para Nova York,
+          onde viveu por décadas em anonimato trabalhando como auxiliar de
+          enfermagem — só sendo redescoberta pelo público geral no final dos
+          anos 2000. Faleceu em 13 de janeiro de 2026, aos 86 anos.
+        </p>
+
+        <div class="quote">
+          <p>
+            Senti que as mãos de Harriet Tubman me prendiam naquele banco. E as
+            de Sojourner Truth também.
+          </p>
+          <cite>— Claudette Colvin</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CONTEXTO -->
+    <section id="contexto">
+      <div class="inner">
+        <span class="lbl">Contexto histórico</span>
+        <h2>A segregação racial nos EUA</h2>
+        <div class="rule"></div>
+        <p>
+          Após a abolição formal da escravidão em 1865, os estados do Sul
+          implementaram as <strong>Leis Jim Crow</strong> — legislações que
+          institucionalizaram a segregação em escolas, restaurantes, banheiros,
+          hospitais e transportes. O sistema era sustentado não só pela lei, mas
+          por violência explícita e terror racial cotidiano.
+        </p>
+        <p>
+          Em Montgomery, os ônibus seguiam regras humilhantes: as primeiras
+          fileiras eram só para brancos; passageiros negros nas fileiras do meio
+          eram obrigados a ceder o lugar a qualquer branco que precisasse.
+          Recusar era crime. A decisão
+          <em>Brown v. Board of Education</em> (1954), que derrubou a segregação
+          nas escolas, acendeu ainda mais o ânimo do movimento civil e motivou a
+          NAACP a buscar casos jurídicos para derrubar a segregação nos
+          transportes.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. O INCIDENTE -->
+    <section id="incidente">
+      <div class="inner cf">
+        <span class="lbl">2 de março de 1955</span>
+        <h2>O incidente do ônibus</h2>
+        <div class="rule"></div>
+
+        <figure class="fig">
+          <img
+            src="https://en.wikipedia.org/wiki/Special:Redirect/file/Montgomerybus.jpg?width=400"
+            alt="Ônibus em Montgomery, anos 1950"
+            loading="lazy"
+            onerror="this.closest('figure').style.display = 'none'"
+          />
+          <figcaption>
+            Ônibus urbano em Montgomery, anos 1950. Domínio público.
+          </figcaption>
+        </figure>
+
+        <p>
+          Ao sair da escola, Claudette embarcou em um ônibus e se sentou na
+          seção de transição — tecnicamente permitida para negros enquanto não
+          houvesse brancos precisando do assento. Quando uma passageira branca
+          se aproximou e o motorista exigiu que ela cedesse o lugar, Claudette
+          recusou, invocando em voz alta a 14ª Emenda da Constituição.
+        </p>
+        <p>
+          Dois policiais foram chamados. Claudette foi algemada, retirada à
+          força e presa. Foi acusada de violação das leis de segregação, conduta
+          desordenada e agressão a um policial — essa última provavelmente
+          fabricada. Condenada e colocada em liberdade condicional, a condenação
+          ficou em seu registro por décadas.
+        </p>
+        <p>
+          As lideranças da NAACP consideraram usar o caso dela como ponto de
+          partida para um boicote. Decidiram esperar por um caso "mais adequado"
+          — alegando que sua idade, situação pessoal e perfil de classe a
+          tornavam vulnerável demais para uma campanha nacional.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. ROSA PARKS -->
+    <section id="rosa">
+      <div class="inner">
+        <span class="lbl">Comparação</span>
+        <h2>Relação com Rosa Parks</h2>
+        <div class="rule"></div>
+        <p>
+          Em 1º de dezembro de 1955 — nove meses depois de Claudette —, Rosa
+          Parks recusou-se a ceder seu lugar em um ônibus de Montgomery. O
+          Boicote foi lançado, durou 381 dias e terminou com a Suprema Corte
+          declarando a segregação nos ônibus inconstitucional. Parks tornou-se
+          ícone mundial. Claudette ficou nas sombras.
+        </p>
+        <p>
+          Isso não diminui Rosa Parks: seu gesto foi deliberado, executado com
+          plena consciência política. Mas a comparação revela como a narrativa
+          histórica é construída — e quem ela escolhe apagar.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Aspecto</th>
+              <th>Claudette Colvin</th>
+              <th>Rosa Parks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data</td>
+              <td>2 mar. 1955</td>
+              <td>1º dez. 1955</td>
+            </tr>
+            <tr>
+              <td>Idade</td>
+              <td>15 anos</td>
+              <td>42 anos</td>
+            </tr>
+            <tr>
+              <td>Perfil</td>
+              <td>Estudante, família pobre</td>
+              <td>Costureira, ativista experiente</td>
+            </tr>
+            <tr>
+              <td>Repercussão</td>
+              <td>Local, sem campanha</td>
+              <td>Nacional — boicote de 381 dias</td>
+            </tr>
+            <tr>
+              <td>Reconhecimento</td>
+              <td>Décadas de anonimato</td>
+              <td>Ícone internacional</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Vale notar: Claudette foi uma das quatro autoras do processo
+          <em>Browder v. Gayle</em> (1956), que levou à decisão da Suprema
+          Corte. Ela testemunhou naquele julgamento histórico. Seu nome
+          raramente aparece nos livros.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. IMPACTO -->
+    <section id="impacto">
+      <div class="inner">
+        <span class="lbl">Impacto</span>
+        <h2>Contribuição ao movimento civil</h2>
+        <div class="rule"></div>
+        <p>
+          Claudette foi protagonista no processo federal
+          <em>Browder v. Gayle</em>, cuja decisão declarou inconstitucional a
+          segregação nos ônibus. Ao invocar a 14ª Emenda durante sua prisão,
+          demonstrou publicamente que as Leis Jim Crow contradiziam a própria
+          Constituição — argumento que se tornaria central nas batalhas
+          jurídicas seguintes. Seu caso também acelerou a organização interna da
+          NAACP e da Women's Political Council em Montgomery, pavimentando o
+          boicote de dezembro.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. LEGADO -->
+    <section id="legado">
+      <div class="inner">
+        <span class="lbl">Legado</span>
+        <h2>Reconhecimento tardio</h2>
+        <div class="rule"></div>
+        <p>
+          Em 2009, o livro <em>Claudette Colvin: Twice Toward Justice</em>, de
+          Phillip Hoose, ganhou a Medalha Newbery e reintroduziu sua história ao
+          público. Em 2021, com 81 anos, Claudette obteve a expunção de sua
+          ficha criminal — a condenação de 1955 foi finalmente apagada. Faleceu
+          em janeiro de 2026, aos 86 anos, finalmente reconhecida como uma das
+          pioneiras do movimento.
+        </p>
+        <p>
+          Seu caso alimenta hoje debates sobre o
+          <em>respectability politics</em> — a prática de movimentos sociais de
+          apresentar apenas figuras "impecáveis" ao público. Uma estratégia que
+          tem custos reais: silencia histórias complexas e pune os mais
+          vulneráveis.
+        </p>
+
+        <div class="quote">
+          <p>
+            Rosa Parks era a pessoa certa para a campanha. Mas isso não apaga o
+            fato de que foi Claudette quem veio primeiro.
+          </p>
+          <cite>— Phillip Hoose, biógrafo</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONCLUSÃO -->
+    <section id="conclusao">
+      <div class="inner">
+        <span class="lbl">Conclusão</span>
+        <h2>Uma história que merecia ser contada</h2>
+        <div class="rule"></div>
+        <p>
+          A história de Claudette Colvin é de coragem extraordinária e injustiça
+          silenciosa. Resgatar seu nome não significa diminuir outros líderes —
+          significa enriquecer nossa compreensão do que foi aquele momento: uma
+          tapeçaria de atos cotidianos de resistência, protagonizados por
+          pessoas cujas contribuições não cabiam nos moldes da narrativa
+          oficial.
+        </p>
+        <p>
+          A memória histórica não é neutra. Ela é sempre construída e sempre a
+          serviço de alguém. Ao reintroduzir Claudette Colvin nessa narrativa,
+          nos tornamos mais honestos sobre como as revoluções realmente
+          acontecem.
+        </p>
+      </div>
+    </section>
+
+    <!-- 9. REFERÊNCIAS -->
+    <!-- <section id="referencias"> -->
+    <!--   <div class="inner"> -->
+    <!--     <span class="lbl">Fontes</span> -->
+    <!--     <h2>Referências</h2> -->
+    <!--     <div class="rule"></div> -->
+    <!--     <ol -->
+    <!--       style=" -->
+    <!--         padding-left: 1.2rem; -->
+    <!--         display: flex; -->
+    <!--         flex-direction: column; -->
+    <!--         gap: 0.6rem; -->
+    <!--         font-size: 0.88rem; -->
+    <!--         color: var(--muted); -->
+    <!--       " -->
+    <!--     > -->
+    <!--       <li> -->
+    <!--         HOOSE, Phillip. <em>Claudette Colvin: Twice Toward Justice</em>. -->
+    <!--         Farrar, Straus and Giroux, 2009. -->
+    <!--       </li> -->
+    <!--       <li> -->
+    <!--         BRANCH, Taylor. -->
+    <!--         <em>Parting the Waters: America in the King Years, 1954–63</em>. -->
+    <!--         Simon &amp; Schuster, 1988. -->
+    <!--       </li> -->
+    <!--       <li> -->
+    <!--         ROBINSON, Jo Ann Gibson. -->
+    <!--         <em>The Montgomery Bus Boycott and the Women Who Started It</em>. -->
+    <!--         Univ. of Tennessee Press, 1987. -->
+    <!--       </li> -->
+    <!--       <li> -->
+    <!--         THEOHARIS, Jeanne. <em>The Rebellious Life of Mrs. Rosa Parks</em>. -->
+    <!--         Beacon Press, 2013. -->
+    <!--       </li> -->
+    <!--       <li>BROWDER v. GAYLE, 142 F. Supp. 707 (M.D. Ala. 1956).</li> -->
+    <!--       <li>BROWN v. BOARD OF EDUCATION, 347 U.S. 483 (1954).</li> -->
+    <!--       <li> -->
+    <!--         THE NEW YORK TIMES. "Claudette Colvin Has Her Record Cleared". 26 -->
+    <!--         nov. 2021. -->
+    <!--       </li> -->
+    <!--     </ol> -->
+    <!--   </div> -->
+    <!-- </section> -->
+
+    <!-- SOBRE O AUTOR -->
+    <section id="autor">
+      <div class="inner">
+        <span class="lbl">Sobre o autor</span>
+        <h2>Quem escreveu</h2>
+        <div class="rule"></div>
+        <div class="author-card">
+          <div class="avatar">✍</div>
+          <div>
+            <h3>Enzo, Lopes e Andrei</h3>
+            <p>
+              Este trabalho foi produzido com o objetivo de recuperar histórias
+              apagadas da memória coletiva e discutir como a narrativa oficial
+              do movimento pelos direitos civis americanos foi construída.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER — edite à vontade -->
+    <footer>
+      <!-- coloque aqui o que quiser: nome, data de entrega, disciplina, etc. -->
+    </footer>
+  </body>
+</html>
